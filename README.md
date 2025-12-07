@@ -27,22 +27,30 @@ Paczka ROS2 do sterowania TurtleBotem na podstawie kliknięć w oknie kamery.
 ```bash
 cd ~/ros2_ws/src
 git clone https://github.com/Ignacy12345/turtlebot_control.git
+```
 
----
 
-# Budowa workspace
+2. Budowa workspace
+```bash
 cd ~/ros2_ws
 colcon build
 source install/setup.bash
+```
 
-# Uruchamianie turtlebota
+3. Uruchamianie turtlebota
+```bash
 export TURTLEBOT3_MODEL=burger
 ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+```
 
-# Uruchamianie kamery
+4. Uruchamianie kamery
+```bash
 ros2 run camera_subscriber camera_node
+```
 
-# Uruchamianie sterowania
+4. Uruchamianie sterowania
+```bash
 ros2 run camera_subscriber point_follower
+```
 
-# koniec
+---

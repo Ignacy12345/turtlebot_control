@@ -53,4 +53,10 @@ ros2 run camera_subscriber camera_node
 ros2 run camera_subscriber point_follower
 ```
 
+
+## Odpalanie z launcha
+```bash
+ros2 launch camera_subscriber turtlebot.launch.py
+```
+
 ---

@@ -1,19 +1,14 @@
 #!/usr/bin/env python3
 
 from launch import LaunchDescription
-from launch.actions import ExecuteProcess, TimerAction
+from launch.actions import ExecuteProcess, TimerAction, SetEnvironmentVariable
 from launch_ros.actions import Node
 
 def generate_launch_description():
     return LaunchDescription([
         # Ustawienie modelu TurtleBota
-        ExecuteProcess(
-            cmd=['bash', '-c', 'export TURTLEBOT3_MODEL=burger && exec "$SHELL"'],
-            shell=True,
-            output='screen'
-        ),
+        SetEnvironmentVariable('TURTLEBOT3_MODEL', 'burger'),
 
-        # Uruchomienie Gazebo z robotem
         ExecuteProcess(
             cmd=['ros2', 'launch', 'turtlebot3_gazebo', 'turtlebot3_world.launch.py'],
             output='screen'
